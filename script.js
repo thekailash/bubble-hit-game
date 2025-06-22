@@ -2,7 +2,7 @@ let hit = document.querySelector("#hit");
 let timer = document.querySelector("#timer");
 let score = document.querySelector("#score");
 let bubbleGrid = document.querySelector("#bubble-grid");
-let timerValue = 15;
+let timerValue = 60;
 let scoreValue = 0;
 let hitrn = 0;
 
@@ -28,7 +28,7 @@ function timerFnc() {
                               </div>`;
 
       document.querySelector("#restart").addEventListener("click", () => {
-        timerValue = 10;
+        timerValue = 60;
         scoreValue = 0;
         score.textContent = scoreValue;
         timer.textContent = timerValue;
