@@ -2,17 +2,27 @@ let hit = document.querySelector("#hit");
 let timer = document.querySelector("#timer");
 let score = document.querySelector("#score");
 let bubbleGrid = document.querySelector("#bubble-grid");
-let timerValue = 60;
+let timerValue = 30;
 let scoreValue = 0;
 let hitrn = 0;
+let startGame = document.querySelector("#startGame");
 
 function bubbleCreate() {
   let clutter = "";
+  if(window.innerWidth >= 768){
   for (let i = 1; i <= 84; i++) {
     let rn = Math.floor(Math.random() * 10);
     clutter += `<div class="bubble">${rn}</div>`;
   }
   bubbleGrid.innerHTML = clutter;
+}
+else{
+  for (let i = 1; i <=35 ; i++) {
+    let rn = Math.floor(Math.random() * 10);
+    clutter += `<div class="bubble">${rn}</div>`;
+  }
+  bubbleGrid.innerHTML = clutter;
+}
 }
 
 function timerFnc() {
@@ -28,7 +38,7 @@ function timerFnc() {
                               </div>`;
 
       document.querySelector("#restart").addEventListener("click", () => {
-        timerValue = 60;
+        timerValue = 30;
         scoreValue = 0;
         score.textContent = scoreValue;
         timer.textContent = timerValue;
@@ -61,7 +71,13 @@ function finalStep() {
   });
 }
 
-bubbleCreate();
-timerFnc();
-hitFnc();
-finalStep();
+function gameStart(){
+startGame.addEventListener("click", () => {
+  bubbleCreate();
+  timerFnc();
+  hitFnc();
+  finalStep();
+});
+}
+
+gameStart();
