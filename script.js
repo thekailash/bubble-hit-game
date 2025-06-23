@@ -56,7 +56,7 @@ function hitFnc() {
 }
 
 function incScore() {
-  scoreValue += 15;
+  scoreValue += 10;
   score.textContent = scoreValue;
 }
 
