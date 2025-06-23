@@ -17,7 +17,7 @@ function bubbleCreate() {
   bubbleGrid.innerHTML = clutter;
 }
 else{
-  for (let i = 1; i <=61 ; i++) {
+  for (let i = 1; i <=54 ; i++) {
     let rn = Math.floor(Math.random() * 10);
     clutter += `<div class="bubble">${rn}</div>`;
   }
